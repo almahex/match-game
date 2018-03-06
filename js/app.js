@@ -22,10 +22,12 @@ let flippedCards = 0;
 let isGameOn = false;
 let timer = 0;
 
+// From seconds to string function from https://stackoverflow.com/questions/6312993/javascript-seconds-to-time-string-with-format-hhmmss
 function toTimeString(seconds) {
   return (new Date(seconds * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
 }
 
+// Timer function from https://stackoverflow.com/questions/5767022/javascript-timer
 function displayTimer() {
     document.getElementsByClassName('timer')[0].innerHTML=toTimeString(timer);
 }

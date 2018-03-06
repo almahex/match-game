@@ -12,9 +12,12 @@ At any moment of the game, the game can be started by clicking at the refresh ic
 
 ## Credits
 
-### Libraries Used
+### Libraries & Functions used
 
 * [Animate.css](https://github.com/daneden/animate.css)
+* [Function to convert from seconds to hh:mm:ss](https://stackoverflow.com/questions/6312993/javascript-seconds-to-time-string-with-format-hhmmss)
+* [Timer](https://stackoverflow.com/questions/5767022/javascript-timer)
+* [Shuffle function](http://stackoverflow.com/a/2450976)
 
 ### Contributors
 

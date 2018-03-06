@@ -1,0 +1,311 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: #000d0f;
+  font-size: 14px;
+  line-height: 1.2em;
+  width: 660px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0; 
+}
+
+/*
+ *
+ * Header
+ *
+ */
+
+header {
+  margin: 5em 0 3em;
+  padding: 2em;
+  border-bottom: 2px solid #fd9f15;
+}
+
+.title {
+  text-align: center;
+  font-size: 47px;
+  font-weight: 100;
+}
+
+/*
+ *
+ * Main
+ *
+ */
+
+main {
+  width: 660px;
+  min-height: 680px;
+  margin: 0 auto;
+}
+
+/*
+ *
+ * Score
+ *
+ */
+
+.score {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  justify-content: space-between;
+  margin: 0 auto 2em auto;
+  font-size: 18px;
+  padding: 0.25em 0;
+}
+
+.score.win {
+  display: none;
+}
+
+.moves {
+  font-weight: 400;
+  padding: 0.15em;
+}
+
+.timer {
+  padding: 0.15em;
+}
+
+.refresh,
+.inner-refresh {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+svg:not(:root).svg-inline--fa.fa-sync-alt,
+svg:not(:root).svg-inline--fa.fa-star {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/*
+ *
+ * Animations
+ *
+ */
+
+@keyframes flipInY {
+  from {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+  }
+}
+
+.flipInY {
+  backface-visibility: visible !important;
+  animation-name: flipInY;
+}
+
+
+@keyframes shake {
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+    background: #e63412;
+    color: black;
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  animation-name: shake;
+}
+
+
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+    background: #fd9f15;
+  }
+}
+
+.tada {
+  animation-name: tada;
+}
+
+/*
+ *
+ * Board - Cards disposition
+ *
+ */
+
+.board {
+  width: 660px;
+  min-height: 680px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  height: 125px;
+  width: 125px;
+  box-shadow: 5px 5px 1px #e6e6e6;
+  border: 1px solid #cecece;
+  padding: 1.5em 0.5em;
+  margin: 1em;
+  font-size: 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.back-card {
+  background: #fd9f15;
+  color: transparent;
+  cursor: pointer;
+}
+
+.front-card {
+  animation: flipInY 2s;
+  background: #fff;
+}
+
+.match {
+  animation: tada 2s;
+}
+
+.fail {
+  animation: shake 1s;
+}
+
+svg:not(:root).svg-inline--fa {
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+}
+
+/*
+ *
+ * Board - Play again message
+ *
+ */
+
+.board.win {
+  align-content: flex-start;
+}
+
+.win {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+.congrats {
+  font-size: 30px;
+  font-weight: 300;
+  width: 100%;
+  padding-bottom: 0.5em;
+}
+
+.win-message, 
+.stars {
+  width: 100%;
+  margin-top: 1em;
+}
+
+.stars {
+  color: #fd9f15;
+  margin-bottom: 1em;
+}
+
+.play-again {
+  padding: 24px;
+  text-transform: uppercase;
+  margin: 0.5em 0;
+  align-items: center;
+  color: #fd9f15;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.play-again:hover {
+  cursor: pointer;
+}
+
+/*
+ *
+ * Footer
+ *
+ */
+
+footer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 4em auto 3em auto;
+  padding: 2em;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  align-self: center;
+}

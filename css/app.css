@@ -300,12 +300,19 @@ svg:not(:root).svg-inline--fa {
  */
 
 footer {
-  width: 50%;
   display: flex;
   flex-direction: column;
-  margin: 4em auto 3em auto;
-  padding: 2em;
+  margin: 1.5em 0 3em 0;
   text-align: center;
-  border-top: 1px solid #ddd;
+}
+
+.view-source {
+  width: 50%;
   align-self: center;
+  color: #4183c4;
+  font-weight: 300;
+  text-decoration: none;
+  border-top: 1px solid #ddd;
+  margin: 1.3em 0 0;
+  padding: 1em 0;
 }
